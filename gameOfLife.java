@@ -36,6 +36,8 @@ public class gameOfLife {
 	ArrayList<Coordinates>nextGenerationCells=new ArrayList<Coordinates>();//This will store the coordinates of alive cells of next generation
 	HashSet<Coordinates>liveCells=new HashSet<Coordinates>(); //This will store coordinates of  alive cells of the current generation
 	HashSet<Coordinates>requiredCoordinates=new HashSet<Coordinates>();//This will store the alive cells and its neighbors coordinates of the current generation.
+	
+	/*This function will initialize the required data(i.e alive cells) from the current universe*/
 	public void currentUniverseInitialization() throws NumberFormatException, IOException
 	{
 		System.out.println("Enter the coordinates of alive cells");
@@ -62,6 +64,8 @@ public class gameOfLife {
 
 		}
 	}
+	
+	/*This function will use the required data(i.e alive cells) of current universe to find alive cells of next universe*/
 	public void nextUniverseInitialization()
 	{
 		for(Coordinates c:requiredCoordinates)
@@ -132,8 +136,8 @@ public class gameOfLife {
 	public void universeInitialization() throws NumberFormatException, IOException
 	{
 		gameOfLife obj=new gameOfLife();
-		currentUniverseInitialization();//This function will initialize the required data(i.e alive cells) from the current universe
-		nextUniverseInitialization();//This function will use the required data(i.e alive cells) of current universe to find alive cells of next universe
+		currentUniverseInitialization();
+		nextUniverseInitialization();
 		System.out.println("Next Generation alive cells:");
 		for(Coordinates c:nextGenerationCells)
 		{
