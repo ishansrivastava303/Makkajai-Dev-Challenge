@@ -7,7 +7,7 @@ class Coordinates{
 		this.x=x;
 		this.y=y;
 	}
-
+	/*Overriding of hashCode and equals function so that it can generate unique hashcode for objects being passed in HashSet*/
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
